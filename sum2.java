@@ -1,12 +1,14 @@
 import java.util.*;
-public class twosum{
-    public static  void main(String[],args)
-    {
-        int[] arr ={11,3,7,9,14,2};
-        int target =17;
-        int[] ans =new int[2];
-
-
-        HashMap
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> d = new HashMap<>();
+        for (int i = 0;; ++i) {
+            int x = nums[i];
+            int y = target - x;
+            if (d.containsKey(y)) {
+                return new int[] {d.get(y), i};
+            }
+            d.put(x, i);
+        }
     }
 }
